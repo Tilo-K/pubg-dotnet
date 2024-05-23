@@ -38,7 +38,7 @@ namespace Pubg.Net.Tests.Matches
         [Fact]
         public void Can_Retrieve_Match_ForXbox()
         {
-            var samples = Storage.GetSamples(PubgPlatform.Xbox);
+            var samples = Storage.GetSamples(PubgPlatform.Console);
             var matchService = new PubgMatchService(Storage.ApiKey);
 
             var match = matchService.GetMatch(PubgPlatform.Xbox, samples.MatchIds.FirstOrDefault());

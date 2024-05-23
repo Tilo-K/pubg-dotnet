@@ -22,6 +22,10 @@ namespace Pubg.Net.Tests.Util
 
         public static PubgMatchSample GetSamples(PubgPlatform platform)
         {
+            if (platform is PubgPlatform.Xbox or PubgPlatform.PlayStation)
+            {
+                throw new Exception($"As of V15.0.0, the 'console' region must be used to fetch sample data for {platform}");
+            }
             var samples = StoredItems.OfType<PubgMatchSample>().FirstOrDefault(p => p.ShardId == platform.Serialize());
 
             if (samples != null)
