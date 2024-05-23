@@ -27,8 +27,6 @@ namespace Pubg.Net
         Haven,
         [EnumMember(Value = "Kiki_Main")]
         Deston,
-        [EnumMember(Value = "Range_Main")]
-        CampJackal,
         [EnumMember(Value = "Summerland_Main")]
         Karakin,
         [EnumMember(Value = "Tiger_Main")]
