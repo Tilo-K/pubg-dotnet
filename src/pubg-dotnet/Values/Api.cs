@@ -73,5 +73,14 @@ namespace Pubg.Net.Values
             internal static string LifetimeStatsEndpoint(PubgPlatform platform, PubgGameMode gameMode, IEnumerable<string> playerIds) =>
                 string.Format($"{ShardedBaseUrl}/seasons/lifetime/gameMode/{gameMode.Serialize()}/players?filter[playerIds]={string.Join(",", playerIds)}", platform.Serialize());
         }
+
+        internal static class Masteries
+        {
+            internal static string WeaponMasteryEndpoint(PubgPlatform platform, string accountId) =>
+                string.Format($"{ShardedBaseUrl}/players/{accountId}/weapon_mastery", platform.Serialize());
+
+            internal static string SurvivalMasteryEndpoint(PubgPlatform platform, string accountId) =>
+                string.Format($"{ShardedBaseUrl}/players/{accountId}/survival_mastery", platform.Serialize());
+        }
     }
 }
