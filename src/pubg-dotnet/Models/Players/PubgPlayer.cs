@@ -13,6 +13,9 @@ namespace Pubg.Net
 
         [JsonProperty]
         public DateTime CreatedAt { get; set; }
+        
+        [JsonProperty]
+        public DateTime UpdatedAt { get; set; }
 
         [JsonProperty]
         public string PatchVersion { get; set; }
@@ -23,5 +26,8 @@ namespace Pubg.Net
         [JsonProperty("matches")]
         [JsonConverter(typeof(RelationshipIdConverter))]
         public IEnumerable<string> MatchIds { get; set; }
+        
+        [JsonProperty]
+        public string BanType { get; set; }
     }
 }
