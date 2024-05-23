@@ -22,6 +22,18 @@ namespace Pubg.Net
         [EnumMember(Value = "DihorOtok_Main")]
         Vikendi,
         [EnumMember(Value = "Baltic_Main")]
-        Baltic
+        Baltic,
+        [EnumMember(Value = "Heaven_Main")]
+        Haven,
+        [EnumMember(Value = "Kiki_Main")]
+        Deston,
+        [EnumMember(Value = "Range_Main")]
+        CampJackal,
+        [EnumMember(Value = "Summerland_Main")]
+        Karakin,
+        [EnumMember(Value = "Tiger_Main")]
+        Taego,
+        [EnumMember(Value = "Neon_Main")]
+        Rondo,
     }
 }
