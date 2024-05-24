@@ -22,10 +22,6 @@ namespace Pubg.Net.Tests.Util
 
         public static PubgMatchSample GetSamples(PubgPlatform platform)
         {
-            if (platform is PubgPlatform.Xbox or PubgPlatform.PlayStation)
-            {
-                throw new Exception($"As of V15.0.0, the 'console' region must be used to fetch sample data for {platform}");
-            }
             var samples = StoredItems.OfType<PubgMatchSample>().FirstOrDefault(p => p.ShardId == platform.Serialize());
 
             if (samples != null)
@@ -49,7 +45,7 @@ namespace Pubg.Net.Tests.Util
             
             var playerService = new PubgPlayerService(ApiKey);
 
-            var region = platform == PubgPlatform.Xbox ? PubgRegion.XboxEurope : PubgRegion.PCEurope;
+            var region = platform == PubgPlatform.Console ? PubgRegion.XboxEurope : PubgRegion.PCEurope;
 
             var playerNames = GetMatch(platform).Rosters.SelectMany(r => r.Participants).Select(p => p.Stats.Name).Take(5);
             var players = playerService.GetPlayers(platform, new GetPubgPlayersRequest { PlayerNames = playerNames.ToArray() });

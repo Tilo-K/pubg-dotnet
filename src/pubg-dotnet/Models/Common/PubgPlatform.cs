@@ -10,14 +10,6 @@ namespace Pubg.Net
     {
         [EnumMember(Value = "steam")]
         Steam,
-        
-        [Obsolete("The Xbox shard is obsolete use Console instead.")]
-        [EnumMember(Value = "xbox")]
-        Xbox,
-        
-        [EnumMember(Value = "psn")]
-        [Obsolete("The PlayStation shard is obsolete use Console instead.")]
-        PlayStation,
         [EnumMember(Value = "kakao")]
         Kakao,
         [EnumMember(Value = "tournament")]

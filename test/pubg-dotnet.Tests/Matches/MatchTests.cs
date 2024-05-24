@@ -36,12 +36,12 @@ namespace Pubg.Net.Tests.Matches
         }
 
         [Fact]
-        public void Can_Retrieve_Match_ForXbox()
+        public void Can_Retrieve_Match_ForConsole()
         {
             var samples = Storage.GetSamples(PubgPlatform.Console);
             var matchService = new PubgMatchService(Storage.ApiKey);
 
-            var match = matchService.GetMatch(PubgPlatform.Xbox, samples.MatchIds.FirstOrDefault());
+            var match = matchService.GetMatch(PubgPlatform.Console, samples.MatchIds.FirstOrDefault());
 
             match.Rosters.Should().NotBeNull();
 
@@ -65,9 +65,9 @@ namespace Pubg.Net.Tests.Matches
         }
 
         [Fact]
-        public void Throws_Exception_When_NotFound_OnXbox()
+        public void Throws_Exception_When_NotFound_OnConsole()
         {
-            Assert.Throws<PubgNotFoundException>(() => new PubgMatchService(Storage.ApiKey).GetMatch(PubgPlatform.Xbox, Guid.Empty.ToString()));
+            Assert.Throws<PubgNotFoundException>(() => new PubgMatchService(Storage.ApiKey).GetMatch(PubgPlatform.Console, Guid.Empty.ToString()));
         }
     }
 }

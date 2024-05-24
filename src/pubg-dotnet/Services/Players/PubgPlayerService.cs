@@ -170,7 +170,7 @@ namespace Pubg.Net
             => await GetPlayerSeasonAsync(platform, playerId, seasonId, apiKey, cancellationToken);
 
         /// <summary>
-        ///   Gets the players season stats and matches played on the xbox in the specified region
+        ///   Gets the players season stats and matches played on a console in the specified region
         ///   
         ///   **NOTE**: This method has been deprecated and will be removed in the next major version.
         /// </summary>
@@ -183,11 +183,11 @@ namespace Pubg.Net
         /// <exception cref="Pubg.Net.Exceptions.PubgNotFoundException">The api is unable to find the specified player</exception>
         /// <exception cref="Pubg.Net.Exceptions.PubgTooManyRequestsException">You have exceeded your rate limit</exception>
         /// <exception cref="Pubg.Net.Exceptions.PubgUnauthorizedException">Invalid API Key</exception>
-        public virtual PubgPlayerSeason GetPlayerSeasonXbox(PubgRegion region, string playerId, string seasonId, string apiKey = null)
-            => GetPlayerSeason(PubgPlatform.Xbox, playerId, seasonId, apiKey);
+        public virtual PubgPlayerSeason GetPlayerSeasonConsole(PubgRegion region, string playerId, string seasonId, string apiKey = null)
+            => GetPlayerSeason(PubgPlatform.Console, playerId, seasonId, apiKey);
 
         /// <summary>
-        ///   Gets the players season stats and matches played on the xbox in the specified region asychronusly
+        ///   Gets the players season stats and matches played on a console in the specified region asychronusly
         ///   
         ///  **NOTE**: This method has been deprecated and will be removed in the next major version.
         /// </summary>
@@ -200,7 +200,7 @@ namespace Pubg.Net
         /// <exception cref="Pubg.Net.Exceptions.PubgNotFoundException">The api is unable to find the specified player</exception>
         /// <exception cref="Pubg.Net.Exceptions.PubgTooManyRequestsException">You have exceeded your rate limit</exception>
         /// <exception cref="Pubg.Net.Exceptions.PubgUnauthorizedException">Invalid API Key</exception>
-        public async virtual Task<PubgPlayerSeason> GetPlayerSeasonXboxAsync(PubgRegion region, string playerId, string seasonId, string apiKey = null, CancellationToken cancellationToken = default(CancellationToken))
-            => await GetPlayerSeasonAsync(PubgPlatform.Xbox, playerId, seasonId, apiKey, cancellationToken);
+        public async virtual Task<PubgPlayerSeason> GetPlayerSeasonConsoleAsync(PubgRegion region, string playerId, string seasonId, string apiKey = null, CancellationToken cancellationToken = default(CancellationToken))
+            => await GetPlayerSeasonAsync(PubgPlatform.Console, playerId, seasonId, apiKey, cancellationToken);
     }
 }
