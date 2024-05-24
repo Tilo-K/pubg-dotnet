@@ -5,7 +5,7 @@
     <AssemblyTitle>Pubg.Net</AssemblyTitle>
     <Version>2.3.1</Version>
     <Authors>Gavin Power</Authors>
-    <TargetFramework>netstandard2.0;net45</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>Pubg.Net</AssemblyName>
     <PackageId>Pubg-DotNet</PackageId>
     <PackageTags>pubg;playerunknown;battlegrounds;developer;api</PackageTags>
@@ -14,7 +14,6 @@
   </PropertyGroup>
   
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Pubg.Net</RootNamespace>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Product>Pubg.Net</Product>

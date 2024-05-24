@@ -45,7 +45,7 @@ namespace Pubg.Net.Tests.Util
             
             var playerService = new PubgPlayerService(ApiKey);
 
-            var region = platform == PubgPlatform.Xbox ? PubgRegion.XboxEurope : PubgRegion.PCEurope;
+            var region = platform == PubgPlatform.Console ? PubgRegion.XboxEurope : PubgRegion.PCEurope;
 
             var playerNames = GetMatch(platform).Rosters.SelectMany(r => r.Participants).Select(p => p.Stats.Name).Take(5);
             var players = playerService.GetPlayers(platform, new GetPubgPlayersRequest { PlayerNames = playerNames.ToArray() });

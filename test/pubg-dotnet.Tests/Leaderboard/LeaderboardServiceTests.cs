@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System.Linq;
+using FluentAssertions;
 using Pubg.Net;
 using Pubg.Net.Services.Leaderboard;
 using Pubg.Net.Tests.Util;
@@ -18,8 +19,10 @@ namespace pubg.net.Tests.Leaderboard
         public void Can_Get_Leaderboard(PubgGameMode gameMode)
         {
             var service = new PubgLeaderboardService(Storage.ApiKey);
+            var seasonService = new PubgSeasonService(Storage.ApiKey);
 
-            var leaderboard = service.GetGameModeLeaderboard(PubgPlatform.Steam, gameMode);
+            var seasons = seasonService.GetSeasonsPC().Where(s => s.Id.Contains("pc"));
+            var leaderboard = service.GetGameModeLeaderboard(PubgRegion.PCEurope, seasons.First().Id, gameMode);
 
             leaderboard.Id.Should().NotBeNullOrEmpty();
             leaderboard.ShardId.Should().NotBeNullOrEmpty();

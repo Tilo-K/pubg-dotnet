@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 
@@ -9,13 +10,11 @@ namespace Pubg.Net
     {
         [EnumMember(Value = "steam")]
         Steam,
-        [EnumMember(Value = "xbox")]
-        Xbox,
-        [EnumMember(Value = "psn")]
-        PlayStation,
         [EnumMember(Value = "kakao")]
         Kakao,
         [EnumMember(Value = "tournament")]
-        Tournament
+        Tournament,
+        [EnumMember(Value = "console")]
+        Console
     }
 }

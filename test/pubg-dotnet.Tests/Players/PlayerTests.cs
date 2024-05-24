@@ -105,7 +105,7 @@ namespace Pubg.Net.Tests.Players
             var playerId = Storage.GetMatch(PubgPlatform.Steam).Rosters.SelectMany(r => r.Participants).Select(p => p.Stats.PlayerId).FirstOrDefault();
             var seasonId = Storage.GetSeason(region).Id;
 
-            var playerSeason = playerService.GetPlayerSeasonXbox(region, playerId, seasonId);
+            var playerSeason = playerService.GetPlayerSeasonConsole(region, playerId, seasonId);
 
             playerSeason.Should().NotBeNull();
             playerSeason.GameModeStats.Should().NotBeNull();
